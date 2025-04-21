@@ -1,0 +1,49 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Lista de cambios no controlados predeterminada",
+			"files": [
+				"C:/Users/X13/Documents/Unreal Projects/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/CI/KST702KSCRZWYV56G3VJBD.uasset",
+				"C:/Users/X13/Documents/Unreal Projects/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/0I/VIQQWOEJKSKV1EK1XGX3EY.uasset",
+				"C:/Users/X13/Documents/Unreal Projects/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/MO/72II2GSLK9VS0ULW9SACWH.uasset",
+				"C:/Users/X13/Documents/Unreal Projects/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/HE/U35NZS5A9W1UXP1E3FF2GW.uasset",
+				"C:/Users/X13/Documents/Unreal Projects/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/HF/9H7TKAXH9DD8KI3TIXGI2I.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Materials/Ladrillo2k.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Materials/Burbuja.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Textures/red_brick_diff_2k.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Materials/Arena2k.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Materials/Vidrio.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Textures/sand_01_diff_2k.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/StarterContent/Materials/red_brick_diff_2k.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/T8/46ZIBNTTDDR3AOR2XC9VO6.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/VL/KUT2U1MQ1ND9CXN070OTDM.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/OI/BVNTLHAPOPDXURSVGR63ME.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/MM/5416TNIX8GKJW3B714Y6WF.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/CJ/ZQ5BFL59YGMQUT9ZD7CAHJ.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/IO/07IVU4EY14FMETPGTJULEO.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/BW/M7Z5RX3O7568TBJFK5R76I.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/6I/RU1L28PS820IOVH625A0DA.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/21/WWYX44RDCCS98492P9K9O3.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/P1/NN84RP20JNUCL0SHI5W2B8.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/7Y/C94R5C0R01QSL2SVHUG3KD.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/UV/1C6W14EIHMXOXXB657JYKB.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/NC/UUYHDUFQAXTRRN4RVOPIUF.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/0D/0WM78RPJCXHX477YOZXKQE.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/Q1/5IZD4L3UPM3EEODZK67MH1.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/P3/O43ETCZTFMLWWH1CJ941H2.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/B1/9G3WNX7WIR7UKI26T9LK5O.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/1V/XSFYSB2EC9Z21RQOBXZLMO.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/QS/VHQF8JWOATZI5V3ZVY5YTM.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/HF/YFYBQ72OYLHJQS0TSSXGBV.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/2J/AQ1PWWT9TBAI7AA470T014.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/0G/HOAJZN9E4DDI6Y1W3JU13K.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/SX/SKO7AH9HKZVPN4OMFO4DV3.uasset",
+				"E:/Programacion Avanzada/BomberMan_012025/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/FZ/4XWWUGWFDLX56REQRH8Z9W.uasset"
+			]
+		}
+	]
+}
