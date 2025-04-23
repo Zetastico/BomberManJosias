@@ -107,6 +107,9 @@
     <ClCompile Include="..\..\Source\BomberMan_012025\Private\EnemigoTerrestre.cpp">
       <Filter>Source\BomberMan_012025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BomberMan_012025\Private\PuertaCambio.cpp">
+      <Filter>Source\BomberMan_012025\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\BomberMan_012025\Public">
       <UniqueIdentifier>{B8B96ACB-8471-3B17-99BC-3EEEEEEC8864}</UniqueIdentifier>
     </Filter>
@@ -156,6 +159,9 @@
       <Filter>Source\BomberMan_012025\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BomberMan_012025\Public\EnemigoTerrestre.h">
+      <Filter>Source\BomberMan_012025\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BomberMan_012025\Public\PuertaCambio.h">
       <Filter>Source\BomberMan_012025\Public</Filter>
     </ClCompile>
   </ItemGroup>

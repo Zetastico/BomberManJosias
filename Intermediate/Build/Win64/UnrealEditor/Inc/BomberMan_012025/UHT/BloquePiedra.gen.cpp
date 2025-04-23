@@ -30,7 +30,7 @@ struct Z_Construct_UClass_ABloquePiedra_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n *\n */" },
 #endif
 		{ "IncludePath", "BloquePiedra.h" },
 		{ "ModuleRelativePath", "Public/BloquePiedra.h" },
@@ -82,10 +82,10 @@ ABloquePiedra::~ABloquePiedra() {}
 struct Z_CompiledInDeferFile_FID_Users_X13_Documents_Unreal_Projects_BomberMan_012025_Source_BomberMan_012025_Public_BloquePiedra_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABloquePiedra, ABloquePiedra::StaticClass, TEXT("ABloquePiedra"), &Z_Registration_Info_UClass_ABloquePiedra, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloquePiedra), 1088217564U) },
+		{ Z_Construct_UClass_ABloquePiedra, ABloquePiedra::StaticClass, TEXT("ABloquePiedra"), &Z_Registration_Info_UClass_ABloquePiedra, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABloquePiedra), 3458682150U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_X13_Documents_Unreal_Projects_BomberMan_012025_Source_BomberMan_012025_Public_BloquePiedra_h_3379950504(TEXT("/Script/BomberMan_012025"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_X13_Documents_Unreal_Projects_BomberMan_012025_Source_BomberMan_012025_Public_BloquePiedra_h_3585988420(TEXT("/Script/BomberMan_012025"),
 	Z_CompiledInDeferFile_FID_Users_X13_Documents_Unreal_Projects_BomberMan_012025_Source_BomberMan_012025_Public_BloquePiedra_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_X13_Documents_Unreal_Projects_BomberMan_012025_Source_BomberMan_012025_Public_BloquePiedra_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -44,11 +44,12 @@ void ABomberMan_012025GameMode::BeginPlay()
 			}
 		}
 	}
-	GetWorld()->GetTimerManager().SetTimer(TimerCambioBloques, this, &ABomberMan_012025GameMode::ReemplazarTodosLosBloquesInteriores, 5.0f, true);
-	GetWorld()->GetTimerManager().SetTimer(tHDestruirBloques, this, &ABomberMan_012025GameMode::DestruirBloque, 2.0f, false);
-	PosicionarJugadorAleatoriamente();
+	//GetWorld()->GetTimerManager().SetTimer(TimerCambioBloques, this, &ABomberMan_012025GameMode::ReemplazarTodosLosBloquesInteriores, 5.0f, true);
+	//GetWorld()->GetTimerManager().SetTimer(tHDestruirBloques, this, &ABomberMan_012025GameMode::DestruirBloque, 2.0f, false);
+
 	SpawnMapa();
-	
+	//SpawnMapa1();
+	PosicionarJugadorAleatoriamente();
 	/*
 	// Cambiar la posición inicial del jugador
 	ACharacter* Jugador = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
@@ -73,32 +74,52 @@ void ABomberMan_012025GameMode::BeginPlay()
 
 void ABomberMan_012025GameMode::PosicionarJugadorAleatoriamente()
 {
-	TArray<FIntPoint> PosicionesLibres;
+	TArray<FIntPoint> PosicionesCercaDelBorde;
 
-	// Buscar todas las celdas libres (valor 0)
-	for (int32 fila = 1; fila < aMapaBloques.Num() - 1; ++fila)
+	// Buscar bloques de madera (valor 6) cerca del borde
+	int32 NumFilas = aMapaBloques.Num();
+	int32 NumColumnas = aMapaBloques[0].Num();
+
+	for (int32 fila = 1; fila < NumFilas - 1; ++fila)
 	{
-		for (int32 columna = 1; columna < aMapaBloques[fila].Num() - 1; ++columna)
+		for (int32 columna = 1; columna < NumColumnas - 1; ++columna)
 		{
-			if (aMapaBloques[fila][columna] == 0)
+			// Si es un bloque de madera
+			if (aMapaBloques[fila][columna] == 6)
 			{
-				PosicionesLibres.Add(FIntPoint(fila, columna));
+				// Calcular distancia mínima al borde
+				int32 DistanciaSuperior = fila;
+				int32 DistanciaInferior = NumFilas - 1 - fila;
+				int32 DistanciaIzquierda = columna;
+				int32 DistanciaDerecha = NumColumnas - 1 - columna;
+
+				int32 DistanciaMinima = FMath::Min3(
+					FMath::Min(DistanciaSuperior, DistanciaInferior),
+					DistanciaIzquierda,
+					DistanciaDerecha
+				);
+
+				// Si la distancia mínima es baja (por ejemplo <= 3 bloques), consideramos que está cerca del borde
+				if (DistanciaMinima <= 3)
+				{
+					PosicionesCercaDelBorde.Add(FIntPoint(fila, columna));
+				}
 			}
 		}
 	}
 
-	// Verificar que hay posiciones libres
-	if (PosicionesLibres.Num() > 0)
+	// Verificar que hay posiciones válidas
+	if (PosicionesCercaDelBorde.Num() > 0)
 	{
-		// Elegir una posición aleatoria
-		int32 index = FMath::RandRange(0, PosicionesLibres.Num() - 1);
-		FIntPoint posicionElegida = PosicionesLibres[index];
+		// Elegir una posición aleatoria entre las válidas
+		int32 index = FMath::RandRange(0, PosicionesCercaDelBorde.Num() - 1);
+		FIntPoint posicionElegida = PosicionesCercaDelBorde[index];
 
 		// Convertir a coordenadas del mundo
 		FVector nuevaPosicion = FVector(
 			XInicial + posicionElegida.Y * AnchoBloque,
 			YInicial + posicionElegida.X * LargoBloque,
-			200.0f // Altura del jugador
+			350.0f // Altura del jugador
 		);
 
 		// Mover al personaje
@@ -106,8 +127,12 @@ void ABomberMan_012025GameMode::PosicionarJugadorAleatoriamente()
 		if (Jugador)
 		{
 			Jugador->SetActorLocation(nuevaPosicion);
-			GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, TEXT("Jugador posicionado aleatoriamente"));
+			GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, TEXT("Jugador posicionado cerca del borde sobre bloque de madera"));
 		}
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, TEXT("No se encontraron bloques de madera cerca del borde"));
 	}
 }
 
@@ -243,8 +268,111 @@ void ABomberMan_012025GameMode::DestruirBloque()
 		}
 	}
 }
+/*
+void ABomberMan_012025GameMode::SpawnMapa1()
+{
+	const int32 NumFilas = aMapaBloques.Num();
+	const int32 NumCols = aMapaBloques[0].Num();
+	const int32 TotalUtil = (NumFilas - 2) * (NumCols - 2);
+	const int32 Objetivo = FMath::RoundToInt(TotalUtil * 0.4f);
 
+	// 1) Reiniciar interior a vacío (0)
+	for (int32 i = 1; i < NumFilas - 1; ++i)
+	{
+		for (int32 j = 1; j < NumCols - 1; ++j)
+		{
+			aMapaBloques[i][j] = 0;
+		}
+	}
 
+	// 2) Llenar lista de posiciones disponibles internas
+	TArray<FIntPoint> Available;
+	Available.Reserve(TotalUtil);
+	for (int32 i = 1; i < NumFilas - 1; ++i)
+	{
+		for (int32 j = 1; j < NumCols - 1; ++j)
+		{
+			Available.Add(FIntPoint(i, j));
+		}
+	}
+
+	int32 Colocados = 0;
+
+	// 3) Generar grupos hasta alcanzar objetivo
+	while (Colocados < Objetivo && Available.Num() > 0)
+	{
+		// a) Tipo de bloque y tamaño aleatorio
+		const int32 Tipo = FMath::RandRange(1, 10);
+		const int32 Tam = FMath::RandRange(3, 8);
+
+		// b) Semilla inicial
+		int32 SeedIndex = FMath::RandRange(0, Available.Num() - 1);
+		FIntPoint Seed = Available[SeedIndex];
+		Available.RemoveAtSwap(SeedIndex);
+
+		TArray<FIntPoint> Group;
+		Group.Add(Seed);
+
+		// c) Expansión contigua
+		for (int32 k = 1; k < Tam; ++k)
+		{
+			TArray<FIntPoint> Neigh;
+			for (const FIntPoint& Cel : Group)
+			{
+				static const FIntPoint Offs[4] = { {1,0}, {-1,0}, {0,1}, {0,-1} };
+				for (const FIntPoint& O : Offs)
+				{
+					FIntPoint Candidate(Cel.X + O.X, Cel.Y + O.Y);
+					if (Available.Contains(Candidate))
+					{
+						Neigh.AddUnique(Candidate);
+					}
+				}
+			}
+			if (Neigh.Num() == 0)
+				break;
+			int32 Pick = FMath::RandRange(0, Neigh.Num() - 1);
+			FIntPoint Next = Neigh[Pick];
+			Group.Add(Next);
+			Available.Remove(Next);
+		}
+
+		// d) Colocar grupo y aislar vecinos
+		for (const FIntPoint& Cel : Group)
+		{
+			aMapaBloques[Cel.X][Cel.Y] = Tipo;
+			Colocados++;
+			// Quitar vecinos 8 direcciones para espacio libre
+			for (int dx = -1; dx <= 1; ++dx)
+			{
+				for (int dy = -1; dy <= 1; ++dy)
+				{
+					FIntPoint N(Cel.X + dx, Cel.Y + dy);
+					Available.Remove(N);
+				}
+			}
+		}
+	}
+
+	// 4) SpawnBloque para cada celda no vacía
+	for (int32 i = 0; i < NumFilas; ++i)
+	{
+		for (int32 j = 0; j < NumCols; ++j)
+		{
+			int32 Valor = aMapaBloques[i][j];
+			if (Valor != 0)
+			{
+				FVector Pos = FVector(
+					XInicial + j * AnchoBloque + AnchoBloque * 0.5f,
+					YInicial + i * LargoBloque + LargoBloque * 0.5f,
+					0.0f
+				);
+				SpawnBloque(Pos, Valor);
+			}
+		}
+	}
+}
+*/
 void ABomberMan_012025GameMode::SpawnMapa()
 {
 	if (UWorld* Mundo = GetWorld())

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// BloquePiedra.h
 
 #pragma once
 
@@ -7,18 +7,31 @@
 #include "BloquePiedra.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class BOMBERMAN_012025_API ABloquePiedra : public ABloque
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
-	ABloquePiedra();
+    ABloquePiedra();
+
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	
+    virtual void BeginPlay() override;
+
+public:
+    virtual void Tick(float DeltaTime) override;
+
+private:
+    FVector PosicionInicial;
+    FVector PosicionObjetivo;
+
+    float TiempoEntreMovimientos;
+    float TiempoDesdeUltimoMovimiento;
+    float VelocidadMovimiento;
+
+    bool bMoviendoAObjetivo;
+
+    void ElegirNuevaDireccion();
 };

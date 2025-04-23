@@ -14,17 +14,10 @@ class BOMBERMAN_012025_API ABloqueBurbuja : public ABloque
 {
 	GENERATED_BODY()
 public:
-	// Constructor
 	ABloqueBurbuja();
 protected:
 	virtual void BeginPlay() override;
-
-public:
-
-	void Tick(float DeltaTime)override;
-	// Aquí puedes agregar cualquier lógica adicional que necesites al inicio del juego
-
+	void GirarBloque();
 private:
-	FVector PosicionInicial;
-
+	FTimerHandle TimerGiro;
 };
