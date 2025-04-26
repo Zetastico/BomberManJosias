@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\X13\\Documents\\Unreal Projects\\BomberMan_012025\\Source\\BomberMan_012025\\BomberMan_012025.Build.cs",
-		"C:\\Users\\X13\\Documents\\Unreal Projects\\BomberMan_012025\\Source\\BomberMan_012025.Target.cs",
-		"C:\\Users\\X13\\Documents\\Unreal Projects\\BomberMan_012025\\Source\\BomberMan_012025Editor.Target.cs"
+		"C:\\Users\\Magne\\Documents\\Unreal Projects\\BomberMan_01202500\\Source\\BomberMan_012025\\BomberMan_012025.Build.cs",
+		"C:\\Users\\Magne\\Documents\\Unreal Projects\\BomberMan_01202500\\Source\\BomberMan_012025.Target.cs",
+		"C:\\Users\\Magne\\Documents\\Unreal Projects\\BomberMan_01202500\\Source\\BomberMan_012025Editor.Target.cs"
 	],
-	"EngineVersion": "5.5.3"
+	"EngineVersion": "5.5.4"
 }

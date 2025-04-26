@@ -4,7 +4,7 @@
 
 ABloquePiedra::ABloquePiedra()
 {
-    PrimaryActorTick.bCanEverTick = true;
+    PrimaryActorTick.bCanEverTick = false;
     PosicionInicial = GetActorLocation();
 
     if (MallaBloque)

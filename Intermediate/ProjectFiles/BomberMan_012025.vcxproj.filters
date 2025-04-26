@@ -92,6 +92,9 @@
     <ClCompile Include="..\..\Source\BomberMan_012025\Private\BloqueVidrio.cpp">
       <Filter>Source\BomberMan_012025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BomberMan_012025\Private\BombaEx.cpp">
+      <Filter>Source\BomberMan_012025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BomberMan_012025\Private\Enemigo.cpp">
       <Filter>Source\BomberMan_012025\Private</Filter>
     </ClCompile>
@@ -144,6 +147,9 @@
       <Filter>Source\BomberMan_012025\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BomberMan_012025\Public\BloqueVidrio.h">
+      <Filter>Source\BomberMan_012025\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BomberMan_012025\Public\BombaEx.h">
       <Filter>Source\BomberMan_012025\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BomberMan_012025\Public\Enemigo.h">
